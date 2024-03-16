@@ -1,4 +1,4 @@
-
+[
     {
       "id": "1",
       "name": "Alex",
@@ -12,12 +12,38 @@
               "header": "header",
               "rows": [
                 {
-                  "description": "row_description_here",
+                  "description": "bruh",
                   "choices": [
-                    "choice_1",
-                    "choice_2",
-                    "choice_3",
-                    "choice_4"
+                    "choice2",
+                    "choice2",
+                    "choice3",
+                    "choice4"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Anna",
+      "description": "details",
+      "levels": [
+        {
+          "level": 3,
+          "sections": [
+            {
+              "order": 2,
+              "header": "another_header",
+              "rows": [
+                {
+                  "description": "bruh",
+                  "choices": [
+                    "choice1",
+                    "choice2",
+                    "choice3"
                   ]
                 }
               ]
@@ -26,5 +52,5 @@
         }
       ]
     }
-
+  ]
   

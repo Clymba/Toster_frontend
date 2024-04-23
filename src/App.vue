@@ -1,18 +1,45 @@
 <template>
-  <div>
-    <!-- Ваш основной контент -->
-    <DataTable />
+  <div id="app">
+    <MainScheme
+      :table = "TABLE"
+    />
   </div>
 </template>
 
 <script>
-import DataTable from '@/components/DataTable.vue'; // Импортируем компонент Table1
+import { mapActions, mapGetters } from 'vuex';
+//import MetaData from '@/components/MetaData.vue'
+import MainScheme from '@/components/MainScheme.vue'
+//mport AbOb from '@/components/AbOb.vue'
 
 export default {
   name: 'App',
   components: {
-    DataTable // Добавляем компонент Table1 в раздел components
+    MainScheme
   },
-  // Другие определения компонента...
+  data: () => {
+    return {
+
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'TABLE'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'GET_TABLE_FROM_API'
+    ])
+  },
+  mounted() {
+    this.GET_TABLE_FROM_API()
+  }
 };
 </script>
+
+<style>
+.meta {
+  margin-bottom: 20px;
+}
+</style>

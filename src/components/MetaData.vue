@@ -30,12 +30,20 @@
 
 <script>
 export default {
-  name: 'DataTable',
+  name: 'MetaData',
+  props: {
+    tmmi_meta: {
+      type: Array,
+      default: () => [],
+    },
+  },
+
   data() {
     return {
       priceOutput: 10
     };
   },
+  
   mounted() {
     const priceInput = document.getElementById('price');
     const priceOutput = document.getElementById('priceOutput');
@@ -51,14 +59,21 @@ export default {
 
 <style>
 .string_meta {
-  background-color: #f0f0f000;
+  background-color: #f0f0f0;
+  padding: 20px;
   border-radius: 5px;
+  margin-bottom: 2em;
 }
 
 .ranges {
-  padding: 1.30em; /* 20px */
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 2em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: green !important;
 }
 
 label {
@@ -69,13 +84,45 @@ input[type="range"] {
   width: 100%;
 }
 
+output {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+p {
+  margin: 10px;
+}
+
 button[type="submit"] {
   background-color: #4CAF50;
-  color: white;
-  padding: 0.625em 1.25em; /* 10px 20px */
+  color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #4CAF50;
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+  .ranges {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .string_meta,
+  .ranges {
+    padding: 10px;
+    margin-bottom: 1em;
+  }
+  
+  input[type="range"] {
+    width: calc(100% - 40px);
+  }
 }
 </style>
